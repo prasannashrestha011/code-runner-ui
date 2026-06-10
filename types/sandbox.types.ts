@@ -25,6 +25,15 @@ export interface SandboxCreatePayload {
   exec_timeout?: number; // nanoseconds
   network_mode?: string;
 }
+/** API request payload for updating a sandbox */
+export interface SandboxUpdatePayload {
+  memory_limit?: number;
+  cpu_limit?: number;
+  pids_limit?: number;
+  session_timeout?: number; // nanoseconds (Go time.Duration)
+  exec_timeout?: number; // nanoseconds
+  network_mode?: string;
+}
 
 /** POST /sandboxes & GET /sandboxes/{id} response data */
 export interface SandboxCreateResponse {
@@ -38,22 +47,25 @@ export interface SandboxCreateResponse {
 
 /** GET /sandboxes list items (Go struct without json tags → PascalCase) */
 export interface SandboxListItem {
-  ID: string;
-  UserID: string;
-  Environment: string;
-  MemoryLimit: number;
-  CPULimit: number;
-  PidsLimit: number;
-  SessionTimeout: number;
-  ExecTimeout: number;
-  NetworkMode: string;
-  ContainerName: string;
-  ContainerID: string;
-  SessionID: string;
-  Status: SandboxStatus;
-  ExpiresAt: string;
-  CreatedAt: string;
-  UpdatedAt: string;
+  id: string;
+  user_id: string;
+  environment: string;
+  memory_limit: number;
+  cpu_limit: number;
+  pids_limit: number;
+  session_timeout: number;
+  exec_timeout: number;
+  network_mode: string;
+  status: SandboxStatus;
+  expires_at: string;
+  created_at: string;
+}
+export interface SandboxExecuteRequest {
+  Lang: string
+  Code: string
+}
+export interface SandboxExecuteResponse {
+  result: string
 }
 
 /** Generic API response wrapper */
