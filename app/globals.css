@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* ==========================================
+     SURFACE / BACKGROUND (The Stripe Aesthetic)
+     ========================================== */
+  --color-background: #ffffff;
+  /* Pure white app canvas */
+  --color-on-background: #0f172a;
+  /* Slate 900 - Dark charcoal (never pure black) for elite typography */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Neutral Surface Containers - Premium Slate grading for clean card definitions */
+  --color-surface-container-lowest: #ffffff;
+  /* Pure White */
+  --color-surface-container-low: #f8fafc;
+  /* Slate 50 - Ultra-clean subtle background tint */
+  --color-surface-container: #f1f5f9;
+  /* Slate 100 - Beautiful flat component backgrounds */
+  --color-surface-container-high: #e2e8f0;
+  /* Slate 200 - Crisp hover backgrounds */
+  --color-surface-container-highest: #cbd5e1;
+  /* Slate 300 - Active state highlights */
+
+  --color-on-surface: #0f172a;
+  /* Slate 900 - Dominant text contrast */
+  --color-on-surface-variant: #475569;
+  /* Slate 600 - Sleek, readable secondary muted text */
+
+  /* ==========================================
+     PRIMARY BRAND ACCENTS (Iconic Tech Blurple & Cyan)
+     ========================================== */
+  /* Primary (Stripe / Linear Blurple) */
+  --color-primary: #635bff;
+  /* Iconic, hyper-vibrant Stripe Blurple */
+  --color-on-primary: #ffffff;
+  --color-primary-container: #eef2ff;
+  /* Soft, premium indigo tint (indigo-50) */
+  --color-on-primary-container: #4f46e5;
+  /* Deep rich iris text contrast */
+
+  /* Secondary (Sleek Tech Cyan) */
+  --color-secondary: #0ea5e9;
+  /* Sky 500 - Brilliant clean blue accent descriptor */
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #f0f9ff;
+  /* Sky 50 */
+  --color-on-secondary-container: #0369a1;
+  /* Sky 700 */
+
+  /* Tertiary (Emerald Success / Status) */
+  --color-tertiary: #10b981;
+  /* Emerald 500 */
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ecfdf5;
+  /* Emerald 50 */
+  --color-on-tertiary-container: #065f46;
+  /* Emerald 800 */
+
+  /* Error (Polished Coral Red) */
+  --color-error: #ef4444;
+  /* Red 500 */
+  --color-on-error: #ffffff;
+  --color-error-container: #fef2f2;
+  /* Red 50 */
+  --color-on-error-container: #991b1b;
+  /* Red 800 */
+
+  /* Outlines & Borders (Razor-thin, professional dividers) */
+  --color-outline: #e2e8f0;
+  /* Slate 200 - Sharp, premium boundaries */
+  --color-outline-variant: #f1f5f9;
+  /* Slate 100 - Subdued interior dividers */
+
+  /* Disabled text */
+  --color-on-surface-disabled: #94a3b8;
+  /* Slate 400 */
+
+  /* ==========================================
+     SPACING & LAYOUT STRUCTURAL UTILITIES (Preserved)
+     ========================================== */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Typography families mapping configurations */
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Typography configurations */
+  --font-headline-md: var(--font-sans);
+  --text-headline-md: 28px;
+  --text-headline-md--line-height: 36px;
+  --text-headline-md--font-weight: 700;
+
+  --font-body-md: var(--font-sans);
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+
+  --font-body-sm: var(--font-sans);
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 18px;
+  --text-body-sm--font-weight: 400;
+
+  --font-label-mono: var(--font-mono);
+  --text-label-mono: 11px;
+  --text-label-mono--line-height: 16px;
+  --text-label-mono--font-weight: 600;
+  --text-label-mono--letter-spacing: 0.05em;
+
+  --font-title-md: var(--font-sans);
+  --text-title-md: 16px;
+  --text-title-md--line-height: 24px;
+  --text-title-md--font-weight: 600;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
 }
