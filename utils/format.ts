@@ -17,14 +17,14 @@ export function formatMemory(mb: number): string {
 export function statusColor(status: string) {
   switch (status?.toLowerCase()) {
     case "active":
-      return { text: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20", dot: "bg-emerald-400" };
+      return { text: "text-emerald-600", bg: "bg-emerald-50 border-emerald-200", dot: "bg-emerald-500" };
     case "inactive":
-      return { text: "text-zinc-400", bg: "bg-zinc-500/10 border-zinc-500/20", dot: "bg-zinc-400" };
+      return { text: "text-zinc-500", bg: "bg-zinc-50 border-zinc-200", dot: "bg-zinc-400" };
     case "expired":
-      return { text: "text-amber-400", bg: "bg-amber-500/10 border-amber-500/20", dot: "bg-amber-400" };
+      return { text: "text-amber-600", bg: "bg-amber-50 border-amber-200", dot: "bg-amber-500" };
     case "stopped":
-      return { text: "text-red-400", bg: "bg-red-500/10 border-red-500/20", dot: "bg-red-400" };
+      return { text: "text-red-600", bg: "bg-red-50 border-red-200", dot: "bg-red-500" };
     default:
-      return { text: "text-zinc-500", bg: "bg-zinc-500/10 border-zinc-500/20", dot: "bg-zinc-500" };
+      return { text: "text-zinc-500", bg: "bg-zinc-50 border-zinc-200", dot: "bg-zinc-500" };
   }
 }
