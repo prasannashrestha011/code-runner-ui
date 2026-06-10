@@ -1,5 +1,4 @@
 import CreateSandboxForm from '@/components/sandbox/create_form/CreateSandboxForm'
-import Link from 'next/link'
 
 export default function CreateSandboxPage() {
     return (
