@@ -20,6 +20,7 @@ export class SandboxCommandBuilder {
     }
     static build(formState: SandboxFormState): SandboxCreatePayload {
         return new SandboxCommandBuilder()
+            .setImageId(formState.image_id)
             .setEnvironment(formState.environment)
             .setMemoryLimit(formState.memory_limit)
             .setCpuLimit(formState.cpu_limit)
@@ -30,6 +31,11 @@ export class SandboxCommandBuilder {
             .toPayload()
     }
 
+    setImageId(id: string): this {
+        const value = id?.trim();
+        if (value) this.payload.image_id = value;
+        return this
+    }
     setEnvironment(env: string): this {
         const value = env?.trim();
         if (value) this.payload.environment = value;
